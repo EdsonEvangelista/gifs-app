@@ -1,11 +1,15 @@
 <div class="bg-dark border-right p-3" id="sidebar" >
   <h3 class="text-light">GifsApp</h3>
-  <hr>
+  <hr class="text-white">
 
-  <div class="list-group list-reset">
-    <button class="list-group-item list-grou-action">
+  <!-- <div class="list-group list-reset">
+    <button class="list-group-item list-group-action">
       Samurai X
     </button>
+  </div> -->
+
+  <div class="list-group list-reset">
+    <button class="list-group-item list-group-action" *ngFor="let tag of tags"> {{ tag | titlecase }}</button>
   </div>
 
 
