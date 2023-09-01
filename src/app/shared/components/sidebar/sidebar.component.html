@@ -9,7 +9,12 @@
   </div> -->
 
   <div class="list-group list-reset">
-    <button class="list-group-item list-group-action" *ngFor="let tag of tags"> {{ tag | titlecase }}</button>
+    <button
+    *ngFor="let tag of tags"
+    class="list-group-item list-group-action"
+    (click)="buscaGif(tag)">
+      {{ tag | titlecase }}
+  </button>
   </div>
 
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { GifsService } from 'src/app/gifs/services/gifs.service';
 
 @Component({
@@ -10,9 +10,14 @@ export class SidebarComponent {
 
   constructor(private gifsService: GifsService) {}
 
-  get tags(){
+  get tags(): string[] {
     return this.gifsService.tagHistory;
   }
 
+  buscaGif( oldTag: string ):void {
+    // const oldTag = this.btnBuscar.nativeElement.innerHTML;
+
+    this.gifsService.searchTag(oldTag);
+  }
 
 }
