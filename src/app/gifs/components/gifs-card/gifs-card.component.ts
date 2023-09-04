@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Gif } from '../../interfaces/gifs.interfaces';
 
 @Component({
@@ -6,11 +6,14 @@ import { Gif } from '../../interfaces/gifs.interfaces';
   templateUrl: './gifs-card.component.html',
   styleUrls: ['./gifs-card.component.css']
 })
-export class GifsCardComponent {
+export class GifsCardComponent implements OnInit {
 
   constructor() {}
+  ngOnInit(): void {
+    if ( !this.gif) throw new Error('Gif is property is required');
+  }
 
-  // @Input()
-  // gifs: Gif
+  @Input()
+  public gif!: Gif
 
 }
